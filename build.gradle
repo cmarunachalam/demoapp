@@ -1,0 +1,70 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.9.RELEASE")  // spring boot gradle plugin will used for generate jar
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+def getDate() {
+    def date = new Date()
+    def formattedDate = date.format('yyyyMMddHHmmss')
+    return formattedDate
+}
+
+description = "Demo Application"
+apply from: 'version.gradle'
+
+apply plugin: 'java'                                // plugin for java
+apply plugin: 'org.springframework.boot'            // plugin for spring boot framework
+apply plugin: 'maven-publish'
+
+jar {
+    baseName = 'demo-application'             // jar file name
+    version = loadVersion().getVersion()     // application version
+    manifest {
+        attributes(
+                'Main-Class': 'com.javadeveloperzone.SpringBootApplication'
+        )
+    }
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")     // web application dependency
+}
+
+sourceCompatibility = 1.8                               // for Java 1.8
+targetCompatibility = 1.8
+
+group 'demo-application'
+version '1.0-SNAPSHOT'
+
+project.tasks.findAll { it.name.startsWith("publish") } .each { it.dependsOn assemble }
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+            groupId = "com.javadeveloperzone"
+            artifactId = "demo-application"
+            version = loadVersion().getVersion() + getDate()
+
+            repositories {
+                maven {
+                    credentials {
+                        username = "admin"
+                        password = "admin123"
+                    }
+                    url "http://192.168.1.12:8081/repository/maven-releases/"
+                }
+            }
+        }
+    }
+}
+
+
