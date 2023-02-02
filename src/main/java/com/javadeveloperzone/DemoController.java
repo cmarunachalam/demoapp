@@ -10,6 +10,6 @@ public class DemoController {
     @RequestMapping(value = "hello")
     public String hello(){
         System.out.println("==Demo==");
-        return "demo example January 4th - "+new Date();
+        return "demo example - "+new Date();
     }
 }
