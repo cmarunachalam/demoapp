@@ -9,7 +9,7 @@ import java.util.Date;
 public class DemoController {
     @RequestMapping(value = "hello")
     public String hello(){
-        System.out.println("==Demo==");
+        System.out.println("==Demo==1");
         return "demo example January 4th - "+new Date();
     }
 }
