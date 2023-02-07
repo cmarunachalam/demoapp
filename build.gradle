@@ -4,6 +4,8 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.9.RELEASE")  // spring boot gradle plugin will used for generate jar
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.5"
+
     }
 }
 
@@ -23,6 +25,7 @@ apply from: 'version.gradle'
 apply plugin: 'java'                                // plugin for java
 apply plugin: 'org.springframework.boot'            // plugin for spring boot framework
 apply plugin: 'maven-publish'
+apply plugin: "org.sonarqube" version "2.7"
 
 jar {
     baseName = 'demo-application'             // jar file name
