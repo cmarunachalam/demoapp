@@ -8,15 +8,21 @@ import java.util.Date;
 @RestController
 public class DemoController {
     @RequestMapping(value = "home")
-    public String hello(){
+    public String home(){
         System.out.println("Demo Application");
         return "Home page - "+new Date();
     }
     
     
-    @RequestMapping(value = "hello")
-    public String hello(){
-        System.out.println("Test 123");
+    @RequestMapping(value = "services")
+    public String services(){
+        System.out.println("Services...");
         return "demo example - "+new Date();
+    }
+    
+    @RequestMapping(value = "aboutUs")
+    public String aboutUs(){
+        System.out.println("About us");
+        return "About Us"
     }
 }
