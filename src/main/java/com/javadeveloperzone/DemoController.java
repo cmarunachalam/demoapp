@@ -10,19 +10,19 @@ public class DemoController {
     @RequestMapping(value = "home")
     public String home(){
         System.out.println("Demo Application");
-        return "Home page - "+new Date();
+        return "Home-"+new Date();
     }
     
     
     @RequestMapping(value = "services")
     public String services(){
         System.out.println("Services...");
-        return "demo example - "+new Date();
+        return "Services";
     }
     
     @RequestMapping(value = "aboutUs")
     public String aboutUs(){
         System.out.println("About us");
-        return "About Us"
+        return "About Us";
     }
 }
