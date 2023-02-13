@@ -1,5 +1,6 @@
 package com.javadeveloperzone;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,6 +9,12 @@ import java.util.Date;
 
 @RestController
 public class DemoController {
+
+    @GetMapping("/")
+    public String welcome(){
+        return "Welcome";
+    }
+
     @RequestMapping(value = "home", method = RequestMethod.GET)
     public String home(){
         return "Home-"+new Date();
