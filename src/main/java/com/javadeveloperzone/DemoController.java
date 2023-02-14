@@ -29,4 +29,9 @@ public class DemoController {
     public String aboutUs(){
         return "About Us";
     }
+    
+    @RequestMapping(value = "logout")
+    public String logout(){
+        return "Logout";
+    }
 }
