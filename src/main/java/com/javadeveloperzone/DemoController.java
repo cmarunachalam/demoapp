@@ -17,6 +17,7 @@ public class DemoController {
 
     @RequestMapping(value = "home", method = RequestMethod.GET)
     public String home(){
+        System.out.println("Demo");
         return "Home-"+new Date();
     }
     
