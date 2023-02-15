@@ -12,11 +12,6 @@ repositories {
     mavenCentral()
 }
 
-def getDate() {
-    def date = new Date()
-    def formattedDate = date.format('yyyyMMddHHmmss')
-    return formattedDate
-}
 
 description = "Demo Application"
 //apply from: 'version.gradle'
@@ -25,6 +20,10 @@ apply plugin: 'java'                                // plugin for java
 apply plugin: 'org.springframework.boot'            // plugin for spring boot framework
 apply plugin: 'maven-publish'
 apply plugin: "org.sonarqube"
+apply plugin: "jacoco"
+jacoco {
+    toolVersion = "0.8.5"
+}
 
 jar {
     baseName = 'demo-app'             // jar file name
@@ -36,8 +35,39 @@ jar {
     }
 }
 
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        csv.enabled false
+        html.destination file("${buildDir}/reports/jacocoHtml")
+    }
+}
+
+test {
+    jacoco {
+        destinationFile = file("$buildDir/jacoco/jacocoTest.exec")
+        includes= ["com.javadeveloperzone.*"]
+        classDumpDir = file("$buildDir/jacoco/classpathdumps")
+    }
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 1
+            }
+        }
+    }
+}
+
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web")     // web application dependency
+    compile("org.springframework.boot:spring-boot-starter-web")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile('org.junit.jupiter:junit-jupiter:5.8.1')
+//    testImplementation 'org.springframework.boot:spring-boot-starter-test:1.5.9.RELEASE'
+//    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'// web application dependency
 }
 
 sourceCompatibility = 1.8                               // for Java 1.8
@@ -54,7 +84,7 @@ publishing {
             from components.java
             groupId = "com.javadeveloperzone"
             artifactId = "demo-application"
-           // version = loadVersion().getVersion() + getDate()
+            version = "1.0"
 
             repositories {
                 maven {
