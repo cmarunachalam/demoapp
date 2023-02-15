@@ -66,8 +66,6 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('org.junit.jupiter:junit-jupiter:5.8.1')
-//    testImplementation 'org.springframework.boot:spring-boot-starter-test:1.5.9.RELEASE'
-//    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'// web application dependency
 }
 
 sourceCompatibility = 1.8                               // for Java 1.8
