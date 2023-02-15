@@ -14,7 +14,6 @@ repositories {
 
 
 description = "Demo Application"
-//apply from: 'version.gradle'
 
 apply plugin: 'java'                                // plugin for java
 apply plugin: 'org.springframework.boot'            // plugin for spring boot framework
