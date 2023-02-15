@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Date;
 
 @RestController
 public class DemoController {
@@ -18,7 +17,7 @@ public class DemoController {
     @RequestMapping(value = "home", method = RequestMethod.GET)
     public String home(){
         System.out.println("Demo");
-        return "Home-"+new Date();
+        return "Home";
     }
     
     @RequestMapping(value = "services", method = RequestMethod.GET)
