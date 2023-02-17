@@ -27,6 +27,7 @@ public class DemoController {
     
     @RequestMapping(value = "aboutUs")
     public String aboutUs(){
+        System.out.println("about us");
         return "About Us";
     }
     
