@@ -32,7 +32,7 @@ public class DemoController {
     
     @RequestMapping(value = "logout")
     public String logout(){
-        System.out.println("logout");
+        System.out.println("logouts");
         return "Logout";
     }
 }
