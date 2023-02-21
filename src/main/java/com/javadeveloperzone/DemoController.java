@@ -22,6 +22,7 @@ public class DemoController {
     
     @RequestMapping(value = "services", method = RequestMethod.GET)
     public String services(){
+        System.out.println("Services");
         return "Services";
     }
     
