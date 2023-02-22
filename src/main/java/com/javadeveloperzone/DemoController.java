@@ -1,8 +1,6 @@
 package com.javadeveloperzone;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -14,22 +12,22 @@ public class DemoController {
         return "Welcome";
     }
 
-    @RequestMapping(value = "home", method = RequestMethod.GET)
+    @GetMapping("/home")
     public String home(){
         return "Home";
     }
-    
-    @RequestMapping(value = "services", method = RequestMethod.GET)
+
+    @GetMapping("/services")
     public String services(){
         return "Services";
     }
-    
-    @RequestMapping(value = "aboutUs")
+
+    @GetMapping("/aboutUs")
     public String aboutUs(){
         return "About Us";
     }
-    
-    @RequestMapping(value = "logout")
+
+    @GetMapping("/logout")
     public String logout(){
         return "Logout";
     }
