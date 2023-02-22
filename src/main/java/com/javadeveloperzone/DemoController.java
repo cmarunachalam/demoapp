@@ -16,25 +16,21 @@ public class DemoController {
 
     @RequestMapping(value = "home", method = RequestMethod.GET)
     public String home(){
-        System.out.println("Demo");
         return "Home";
     }
     
     @RequestMapping(value = "services", method = RequestMethod.GET)
     public String services(){
-        System.out.println("Services");
         return "Services";
     }
     
     @RequestMapping(value = "aboutUs")
     public String aboutUs(){
-        System.out.println("about us");
         return "About Us";
     }
     
     @RequestMapping(value = "logout")
     public String logout(){
-        System.out.println("logouts");
         return "Logout";
     }
 }
