@@ -19,7 +19,8 @@ public class DemoController {
 
     @GetMapping("/services")
     public String services(){
-        return "Services";
+        System.out.println("service");
+        return "Our Services";
     }
 
     @GetMapping("/aboutUs")
