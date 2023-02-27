@@ -9,7 +9,6 @@ public class DemoController {
 
     @GetMapping("/")
     public String welcome(){
-        System.out.println("test");
         return "Welcome";
     }
 
