@@ -19,7 +19,7 @@ public class DemoController {
 
     @GetMapping("/services")
     public String services(){
-        return "Our Services";
+        return "Services";
     }
 
     @GetMapping("/aboutUs")
