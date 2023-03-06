@@ -24,6 +24,7 @@ public class DemoController {
 
     @GetMapping("/aboutUs")
     public String aboutUs(){
+        System.out.println("about us");
         return "About Us";
     }
 
