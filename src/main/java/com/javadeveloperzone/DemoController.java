@@ -29,6 +29,7 @@ public class DemoController {
 
     @GetMapping("/logout")
     public String logout(){
+        System.out.println("logout");
         return "Logout";
     }
 }
