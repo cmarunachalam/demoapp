@@ -9,6 +9,7 @@ public class DemoController {
 
     @GetMapping("/")
     public String welcome(){
+        System.out.println("==welcome==");
         return "Welcome";
     }
 
@@ -19,11 +20,13 @@ public class DemoController {
 
     @GetMapping("/services")
     public String services(){
+        System.out.println("==services====");
         return "Services";
     }
 
     @GetMapping("/aboutUs")
     public String aboutUs(){
+        System.out.println("===about us===");
         return "About Us";
     }
 
