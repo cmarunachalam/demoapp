@@ -9,6 +9,7 @@ public class DemoController {
 
     @GetMapping("/")
     public String welcome(){
+        System.out.println("update");
         return "Welcome";
     }
 
@@ -19,7 +20,6 @@ public class DemoController {
 
     @GetMapping("/services")
     public String services(){
-        System.out.println("services update");
         return "Services";
     }
 
