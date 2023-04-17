@@ -14,6 +14,7 @@ public class DemoController {
 
     @GetMapping("/home")
     public String home(){
+        System.out.println("welcome home");
         return "Home";
     }
 
