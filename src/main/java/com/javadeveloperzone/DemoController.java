@@ -14,7 +14,6 @@ public class DemoController {
 
     @GetMapping("/home")
     public String home(){
-        System.out.println("====Test=====");
         return "Home";
     }
 
