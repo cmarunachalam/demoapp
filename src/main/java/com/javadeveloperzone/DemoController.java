@@ -14,13 +14,12 @@ public class DemoController {
 
     @GetMapping("/home")
     public String home(){
-        System.out.println("service page");
+        System.out.println("home page");
         return "Home";
     }
 
     @GetMapping("/services")
     public String services(){
-        System.out.println("service page");
         return "Services";
     }
 
