@@ -14,7 +14,7 @@ public class DemoController {
 
     @GetMapping("/home")
     public String home(){
-        System.out.println("home page");
+        System.out.println("home page1");
         return "Home";
     }
 
