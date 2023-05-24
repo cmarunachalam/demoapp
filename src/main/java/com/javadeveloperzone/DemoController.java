@@ -14,6 +14,7 @@ public class DemoController {
 
     @GetMapping("/home")
     public String home(){
+        System.out.println("home page1");
         return "Home";
     }
 
@@ -24,7 +25,6 @@ public class DemoController {
 
     @GetMapping("/aboutUs")
     public String aboutUs(){
-        System.out.println("====Test=====");
         return "About Us";
     }
 
