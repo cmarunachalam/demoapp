@@ -28,6 +28,12 @@ public class DemoController {
         return "About Us";
     }
 
+    @GetMapping("/contactUs")
+    public String contactUs(){
+        System.out.println("====contactUs=====");
+        return "Contact Us";
+    }
+
     @GetMapping("/logout")
     public String logout(){
         return "Logout";
