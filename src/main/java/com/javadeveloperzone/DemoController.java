@@ -24,8 +24,14 @@ public class DemoController {
 
     @GetMapping("/aboutUs")
     public String aboutUs(){
-        System.out.println("====Test=====");
+        System.out.println("about us.....");
         return "About Us";
+    }
+
+    @GetMapping("/contactUs")
+    public String contactUs(){
+        System.out.println("====contactUs=====");
+        return "Contact Us";
     }
 
     @GetMapping("/logout")
